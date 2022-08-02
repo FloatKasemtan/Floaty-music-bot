@@ -1,0 +1,36 @@
+{
+  "name": "floaty-music-bot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "ts-node src/index.ts",
+    "dev": "ts-node-dev src/index.ts",
+    "prod": "node dist/index.js",
+    "build": "tsc",
+    "watch": "tsc -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FloatKasemtan/Floaty-music-bot.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FloatKasemtan/Floaty-music-bot/issues"
+  },
+  "homepage": "https://github.com/FloatKasemtan/Floaty-music-bot#readme",
+  "dependencies": {
+    "discord.js": "^14.1.2",
+    "dotenv": "^16.0.1",
+    "glob": "^8.0.3"
+  },
+  "devDependencies": {
+    "@types/glob": "^7.2.0",
+    "@types/node": "^18.6.3",
+    "ts-node": "^10.9.1",
+    "ts-node-dev": "^2.0.0",
+    "typescript": "^4.7.4"
+  }
+}
