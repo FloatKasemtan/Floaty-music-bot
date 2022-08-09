@@ -11,10 +11,12 @@ import glob from "glob";
 import { promisify } from "util";
 import { registerCommandsOptions } from "../typings/client";
 import { Event } from "./Event";
+import { Player } from "discord-player";
 
 const globPromise = promisify(glob);
 
 export class ExtendedClient extends Client {
+  player: Player;
   commands: Collection<string, CommandType> = new Collection();
 
   constructor() {
@@ -31,11 +33,18 @@ export class ExtendedClient extends Client {
   }
 
   start() {
+    this.initializePlayer();
     this.registerModules();
     this.login(process.env.botToken);
   }
   async importFile(filePath: string) {
     return (await import(filePath))?.default;
+  }
+
+  initializePlayer() {
+    this.player = new Player(this, {
+      ytdlOptions: { quality: "highestaudio", highWaterMark: 1 << 25 },
+    });
   }
 
   async registerCommands({ commands, guildId }: registerCommandsOptions) {

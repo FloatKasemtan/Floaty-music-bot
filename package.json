@@ -22,9 +22,12 @@
   },
   "homepage": "https://github.com/FloatKasemtan/Floaty-music-bot#readme",
   "dependencies": {
+    "@discordjs/opus": "^0.8.0",
+    "discord-player": "^5.3.1",
     "discord.js": "^14.1.2",
     "dotenv": "^16.0.1",
-    "glob": "^8.0.3"
+    "glob": "^8.0.3",
+    "ytdl-core": "^4.11.0"
   },
   "devDependencies": {
     "@types/glob": "^7.2.0",
